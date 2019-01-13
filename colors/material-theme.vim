@@ -11,9 +11,95 @@
 "  endif
 " endif
 
+" Color Reference
+"gui00 = "#263238"
+"gui01 = "#404C52"
+"gui02 = "#546E7A"
+"gui03 = "#5C7E8C"
+"gui04 = "#80CBC4"
+"gui05 = "#C792EA"
+"gui06 = "#7986CB"
+"gui07 = "#82B1FF"
+"gui08 = "#8BD649"
+"gui09 = "#C3E88D"
+"gui0A = "#CDD3DE"
+"gui0B = "#EC5F67"
+"gui0C = "#F1E655"
+"gui0D = "#F77669"
+"gui0E = "#FFE082"
+"gui0F = "#AABBC3"
+
+"@very-light-gray:   #EEFFFF37474F;
+"@light-gray:        #B2CCD6;
+"@gray:              #373b41;
+"@dark-gray:         #282a2e;
+"@very-dark-gray:    #263238;
+"
+"@green:             #C3E88D;
+"@teal:              #009688;
+"@light-teal:        #73d1c8;
+"@cyan:              #89DDF3;
+"@blue:              #82AAFF;
+"@indigo:            #7986CB;
+"@purple:            #C792EA;
+"@pink:              #FF5370;
+"@red:               #F07178;
+"@strong-orange:     #F78C6A;
+"@orange:            #FFCB6B;
+"@light-orange:      #FFE082;
+
+" +---------------+
+" |Initialization |
+" +---------------+
+
+" Theme setup
+hi clear
+syntax reset
+let g:colors_name = "material-theme"
+
+" This function is based on one from FlatColor: https://github.com/MaxSt/FlatColor/
+" Which in turn was based on one found in hemisu: https://github.com/noahfrederick/vim-hemisu/
+function! s:h(group, style)
+  if g:my_material_terminal_italics == 0
+    if has_key(a:style, "cterm") && a:style["cterm"] == "italic"
+      unlet a:style.cterm
+    endif
+    if has_key(a:style, "gui") && a:style["gui"] == "italic"
+      unlet a:style.gui
+    endif
+  endif
+  if g:my_material_termcolors == 16
+    let l:ctermfg = (has_key(a:style, "fg") ? a:style.fg.cterm16 : "NONE")
+    let l:ctermbg = (has_key(a:style, "bg") ? a:style.bg.cterm16 : "NONE")
+  else
+    let l:ctermfg = (has_key(a:style, "fg") ? a:style.fg.cterm : "NONE")
+    let l:ctermbg = (has_key(a:style, "bg") ? a:style.bg.cterm : "NONE")
+  endif
+  execute "highlight" a:group
+    \ "guifg="   (has_key(a:style, "fg")    ? a:style.fg.gui   : "NONE")
+    \ "guibg="   (has_key(a:style, "bg")    ? a:style.bg.gui   : "NONE")
+    \ "guisp="   (has_key(a:style, "sp")    ? a:style.sp.gui   : "NONE")
+    \ "gui="     (has_key(a:style, "gui")   ? a:style.gui      : "NONE")
+    \ "ctermfg=" . l:ctermfg
+    \ "ctermbg=" . l:ctermbg
+    \ "cterm="   (has_key(a:style, "cterm") ? a:style.cterm    : "NONE")
+endfunction
+
+"public {{
+
+function! material-theme#set_highlight(group, style)
+  call s:h(a:group, a:style)
+endfunction
+
+"public end }}
+
+" +-----------------+
+" | Color Variables |
+" +-----------------+
+
 " GUI color definitions
 let s:gui00 = "263238"
-let s:gui01 = "37474F"
+let s:gui01 = "404C52"
 let s:gui02 = "546E7A"
 let s:gui03 = "5C7E8C"
 let s:gui04 = "80CBC4"
@@ -26,8 +112,8 @@ let s:gui0A = "CDD3DE"
 let s:gui0B = "EC5F67"
 let s:gui0C = "F1E655"
 let s:gui0D = "F77669"
-let s:gui0E = "F8E71C"
-let s:gui0F = "FFFFFF"
+let s:gui0E = "FEF082"
+let s:gui0F = "AABBC3"
 
 " Terminal color definitions
 let s:cterm00 = "00"
@@ -56,10 +142,6 @@ else
   let s:cterm0F = "14"
 endif
 
-" Theme setup
-hi clear
-syntax reset
-let g:colors_name = "material-theme"
 
 " Highlighting function
 fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr)
