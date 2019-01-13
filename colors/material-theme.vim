@@ -112,7 +112,7 @@ let s:gui0A = "CDD3DE"
 let s:gui0B = "EC5F67"
 let s:gui0C = "F1E655"
 let s:gui0D = "F77669"
-let s:gui0E = "FEF082"
+let s:gui0E = "F8E71C"
 let s:gui0F = "AABBC3"
 
 " Terminal color definitions
@@ -220,26 +220,26 @@ call <sid>hi("Debug",         s:gui08, "", s:cterm08, "", "")
 call <sid>hi("Directory",     s:gui04, "", s:cterm04, "", "")
 call <sid>hi("ErrorMsg",      s:gui08, s:gui00, s:cterm08, s:cterm00, "")
 call <sid>hi("Exception",     s:gui0D, "", s:cterm0D, "", "")
-call <sid>hi("FoldColumn",    "", s:gui01, "", s:cterm01, "")
-call <sid>hi("Folded",        s:gui03, s:gui01, s:cterm03, s:cterm01, "")
+call <sid>hi("FoldColumn",    "", s:gui00, "", s:cterm01, "")
+call <sid>hi("Folded",        s:gui03, s:gui00, s:cterm03, s:cterm01, "")
 call <sid>hi("IncSearch",     s:gui01, s:gui09, s:cterm01, s:cterm09, "none")
 call <sid>hi("Italic",        "", "", "", "", "none")
 call <sid>hi("Macro",         s:gui08, "", s:cterm08, "", "")
-call <sid>hi("MatchParen",    s:gui01, s:gui03, s:cterm00, s:cterm03,  "")
+call <sid>hi("MatchParen",    s:gui00, s:gui03, s:cterm00, s:cterm03,  "")
 call <sid>hi("ModeMsg",       s:gui04, "", s:cterm04, "", "")
 call <sid>hi("MoreMsg",       s:gui04, "", s:cterm04, "", "")
 call <sid>hi("Question",      s:gui0D, "", s:cterm0D, "", "")
 call <sid>hi("Search",        s:gui03, s:gui0A, s:cterm03, s:cterm0A,  "")
-call <sid>hi("SpecialKey",    s:gui03, "", s:cterm03, "", "")
+call <sid>hi("specialkey",    s:gui03, "", s:cterm03, "", "")
 call <sid>hi("TooLong",       s:gui08, "", s:cterm08, "", "")
 call <sid>hi("Underlined",    s:gui08, "", s:cterm08, "", "")
-call <sid>hi("Visual",        "", s:gui01, "", s:cterm01, "")
-call <sid>hi("VisualNOS",     "", s:gui01, "", s:cterm01, "")
+call <sid>hi("Visual",        "", s:gui02, "", s:cterm01, "none")
+call <sid>hi("VisualNOS",     "", s:gui02, "", s:cterm01, "")
 call <sid>hi("WarningMsg",    s:gui08, "", s:cterm08, "", "")
 call <sid>hi("WildMenu",      s:gui08, "", s:cterm08, "", "")
 call <sid>hi("Title",         s:gui04, "", s:cterm04, "", "none")
 call <sid>hi("Conceal",       s:gui04, s:gui00, s:cterm04, s:cterm00, "")
-call <sid>hi("Cursor",        "", s:gui03, "", s:cterm03, "")
+call <sid>hi("Cursor",        "", s:gui02, "", s:cterm01, "")
 call <sid>hi("NonText",       s:gui03, "", s:cterm03, "", "")
 call <sid>hi("Normal",        s:gui0F, s:gui00, s:cterm0F, s:cterm00, "")
 call <sid>hi("LineNr",        s:gui03, s:gui00, s:cterm01, s:cterm00, "")
@@ -248,10 +248,10 @@ call <sid>hi("SpecialKey",    s:gui04, "", s:cterm04, "", "")
 call <sid>hi("StatusLine",    s:gui04, s:gui02, s:cterm04, s:cterm02, "none")
 call <sid>hi("StatusLineNC",  s:gui03, s:gui01, s:cterm03, s:cterm01, "none")
 call <sid>hi("VertSplit",     s:gui00, s:gui00, s:cterm00, s:cterm00, "none")
-call <sid>hi("ColorColumn",   "", s:gui01, "", s:cterm01, "none")
-call <sid>hi("CursorColumn",  "", s:gui01, "", s:cterm01, "none")
-call <sid>hi("CursorLine",    "", s:gui01, "", s:cterm01, "none")
-call <sid>hi("CursorLineNr",  s:gui03, s:gui01, s:cterm03, s:cterm01, "")
+call <sid>hi("ColorColumn",   "", s:gui02, "", s:cterm01, "none")
+call <sid>hi("CursorColumn",  "", s:gui02, "", s:cterm01, "none")
+call <sid>hi("CursorLine",    "", s:gui02, "", s:cterm01, "none")
+call <sid>hi("CursorLineNr",  s:gui04, s:gui00, "", s:cterm01, "none")
 call <sid>hi("PMenu",         s:gui04, s:gui01, s:cterm04, s:cterm01, "none")
 call <sid>hi("PMenuSel",      s:gui0A, s:gui01, s:cterm0A, s:cterm01, "")
 call <sid>hi("TabLine",       s:gui03, s:gui01, s:cterm03, s:cterm01, "none")
@@ -378,6 +378,10 @@ call <sid>hi("phpBoolean",        s:gui05, "", s:cterm05, "", "")
 " Python highlighting
 call <sid>hi("pythonOperator",  s:gui04, "", s:cterm04, "", "")
 call <sid>hi("pythonRepeat",    s:gui04, "", s:cterm04, "", "")
+
+" R highlighting
+call <sid>hi("rOperator",  s:gui07, "", s:cterm07, "", "")
+
 
 " Ruby highlighting
 call <sid>hi("rubyAttribute",               s:gui0D, "", s:cterm0D, "", "")
