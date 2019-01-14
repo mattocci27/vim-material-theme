@@ -10,7 +10,7 @@ Installation
 
 ### Option 1: Manual installation
 
-1.  Move `material-theme.vim` to your `.vim/colors` directory. After downloading the 
+1.  Move `material-theme.vim` to your `.vim/colors` directory. After downloading the
     vim script or package:
 
         $ mv colors/material-theme.vim ~/.vim/colors/
@@ -22,11 +22,11 @@ Installation
 2.  Next, move or clone the `vim-material-theme` directory so that it is a subdirectory of the `.vim/bundle` directory.
 
         $ cd ~/.vim/bundle
-        $ git clone https://github.com/jdkanani/vim-material-theme
+        $ git clone https://github.com/mattocci27/vim-material-theme
 
 ### Modify .vimrc
 
-After either Option 1 or Option 2 above, put the following two lines in your 
+After either Option 1 or Option 2 above, put the following two lines in your
 .vimrc:
 
     syntax enable
